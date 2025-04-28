@@ -86,6 +86,6 @@ Love the app? Have suggestions? [Let me know!](https://github.com/noviciusss/pok
 ---
 
 <div align="center">
-  <a href="https://github.com/noviciusss/pokemon-explorer">View on GitHub</a> | 
-  <a href="https://pokemon-explorer-liart.vercel.app/">Try Live Demo</a>
+  <a href="(https://github.com/noviciusss/Dexplorer)">View on GitHub</a> | 
+  <a href="https://dexplorer-pokemon.vercel.app/">Try Live Demo</a>
 </div>
