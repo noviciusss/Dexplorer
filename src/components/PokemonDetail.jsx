@@ -39,28 +39,30 @@ const PokemonDetail = ({ pokemon, onClose }) => {
 
   return (
     <motion.div 
-      className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4"
+      className="fixed inset-0 bg-black bg-opacity-60 flex items-start justify-center z-50 pt-4 pb-4 px-2 sm:px-4 overflow-y-auto"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
       <motion.div 
-        className={`bg-gradient-to-br ${getBackgroundGradient(primaryType)} rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden`}
+        className={`bg-gradient-to-br ${getBackgroundGradient(primaryType)} rounded-xl shadow-2xl w-full max-w-4xl mb-4 mt-2 sm:mt-4`}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
         transition={{ type: 'spring', damping: 15 }}
       >
+        <div className="relative opacity-10 pointer-events-none bg-pokeball-pattern"></div>
         
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-pokeball-pattern"></div>
-      
-        
-        <div className="bg-white/90 backdrop-blur-sm m-1 rounded-lg h-[calc(100%-0.5rem)] overflow-y-auto">
+        <div className="bg-white/90 backdrop-blur-sm m-1 rounded-lg overflow-hidden">
           {/* Close button */}
-          <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm flex justify-end p-2 border-b">
+          <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm flex justify-between p-2 border-b">
+            <h2 className="text-lg font-bold capitalize pl-2">
+              {pokemon.name} #{pokemon.id}
+            </h2>
             <button 
               onClick={onClose}
               className="text-gray-500 hover:text-gray-700 focus:outline-none transition-colors"
+              aria-label="Close"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -69,7 +71,7 @@ const PokemonDetail = ({ pokemon, onClose }) => {
           </div>
           
           {/* Content */}
-          <div className="p-6 flex flex-col md:flex-row gap-8">
+          <div className="p-3 sm:p-6 flex flex-col md:flex-row gap-4 sm:gap-8">
             {/* Left side - Information */}
             <motion.div 
               className="flex-1"
@@ -77,34 +79,34 @@ const PokemonDetail = ({ pokemon, onClose }) => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <div className="flex items-center mb-6">
+              <div className="flex flex-wrap items-center mb-4 sm:mb-6">
                 <motion.h2 
-                  className="text-3xl font-extrabold capitalize"
+                  className="text-2xl sm:text-3xl font-extrabold capitalize mr-2"
                   initial={{ y: -10, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
                 >
                   {pokemon.name}
                 </motion.h2>
-                <span className="ml-2 px-3 py-1 bg-gray-100 rounded-full text-sm font-medium">#{pokemon.id}</span>
+                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium">#{pokemon.id}</span>
               </div>
               
               <motion.div 
-                className="space-y-6"
+                className="space-y-4 sm:space-y-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4">
                   <PokemonTypes types={pokemon.types} />
                 </div>
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4">
                   <PokemonMoves moves={pokemon.moves} />
                 </div>
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4">
                   <PokemonAttributes height={pokemon.height} weight={pokemon.weight} />
                 </div>
-                <div className="bg-white rounded-lg shadow-sm p-4">
+                <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4">
                   <PokemonStats stats={pokemon.stats} />
                 </div>
               </motion.div>
@@ -117,10 +119,10 @@ const PokemonDetail = ({ pokemon, onClose }) => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              <div className={`bg-gradient-to-br ${getBackgroundGradient(primaryType)} p-4 rounded-lg mb-6`}>
+              <div className={`bg-gradient-to-br ${getBackgroundGradient(primaryType)} p-3 sm:p-4 rounded-lg mb-4 sm:mb-6`}>
                 <PokemonImage sprites={pokemon.sprites} name={pokemon.name} />
               </div>
-              <div className="bg-white rounded-lg shadow-sm p-4 flex-grow">
+              <div className="bg-white rounded-lg shadow-sm p-3 sm:p-4 flex-grow">
                 <PokemonEvolution pokemon={pokemon} />
               </div>
             </motion.div>        
