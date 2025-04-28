@@ -1,6 +1,6 @@
 # Pokémon Explorer ✨
 
-[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen.svg)](https://pokemon-explorer-liart.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen.svg)](https://dexplorer-pokemon.vercel.app/)
 
 A fun web application where you can discover and search through the original 150 Pokémon!
 
@@ -32,7 +32,7 @@ A fun web application where you can discover and search through the original 150
 
 ## 🚀 Try It Now!
 
-**[Open Pokémon Explorer](https://pokemon-explorer-liart.vercel.app/)**
+**[Open Pokémon Explorer][(https://dexplorer-pokemon.vercel.app/)]**
 
 ## 📱 Screenshots
 
