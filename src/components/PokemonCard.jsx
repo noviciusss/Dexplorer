@@ -32,7 +32,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
 
   return (
     <motion.div 
-      className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-gradient-to-br ${getCardBackground(primaryType)} cursor-pointer`}
+      className={`rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all bg-gradient-to-br ${getCardBackground(primaryType)} cursor-pointer w-full max-w-xs`}
       onClick={() => onClick(pokemon)}
       whileHover={{ 
         scale: 1.05,
@@ -41,7 +41,7 @@ const PokemonCard = ({ pokemon, onClick }) => {
       }}
       whileTap={{ scale: 0.98 }}
     >
-      <div className="relative p-4">
+      <div className="relative p-2 sm:p-4">
         {/* Card shine effect */}
         <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent pointer-events-none"></div>
         
@@ -51,10 +51,10 @@ const PokemonCard = ({ pokemon, onClick }) => {
         </div>
         
         {/* Card content */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4">
+        <div className="bg-white/80 backdrop-blur-sm rounded-xl p-2 sm:p-4">
           <div className="flex flex-col items-center">
             <motion.div
-              className="bg-gradient-to-b from-gray-50 to-gray-100 rounded-full w-32 h-32 flex items-center justify-center mb-4 overflow-hidden"
+              className="bg-gradient-to-b from-gray-50 to-gray-100 rounded-full w-24 h-24 sm:w-32 sm:h-32 flex items-center justify-center mb-2 sm:mb-4 overflow-hidden"
               whileHover={{ rotate: [0, -5, 5, -5, 0] }}
               transition={{ duration: 0.5 }}
             >
@@ -68,15 +68,15 @@ const PokemonCard = ({ pokemon, onClick }) => {
               />
             </motion.div>
             
-            <h2 className="text-xl font-extrabold capitalize mb-1 text-gray-800">
+            <h2 className="text-lg sm:text-xl font-extrabold capitalize mb-1 text-gray-800 text-center">
               {pokemon.name}
             </h2>
             
-            <div className="flex flex-wrap justify-center gap-2 mt-2">
+            <div className="flex flex-wrap justify-center gap-1 sm:gap-2 mt-1 sm:mt-2">
               {pokemon.types.map((type) => (
                 <span
                   key={type.type.name}
-                  className={`px-3 py-1 rounded-full text-sm font-medium capitalize ${getTypeColorClass(type.type.name)}`}
+                  className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm font-medium capitalize ${getTypeColorClass(type.type.name)}`}
                 >
                   {type.type.name}
                 </span>
