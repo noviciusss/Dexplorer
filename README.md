@@ -4,7 +4,7 @@
 
 A fun web application where you can discover and search through the original 150 Pokémon!
 
-![Pokémon Explorer Screenshot](screenshot.png)
+![Dexplorer](gif.gif)
 
 ## ✨ What Can You Do?
 
@@ -42,7 +42,7 @@ A fun web application where you can discover and search through the original 150
 ### Main View
 ![Dashboard](screenshot.png)
 
-> More screenshots coming soon!
+![Pokemon Card](screenshot-1.png)
 
 </details>
 

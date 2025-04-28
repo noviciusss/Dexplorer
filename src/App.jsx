@@ -126,7 +126,7 @@ const App = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Pokémon Explorer
+            Dexplorer - Pokédex + Explorer 
           </motion.h1>
           
           <motion.div
@@ -135,7 +135,7 @@ const App = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <p className="text-center text-gray-600 mb-8 max-w-lg mx-auto">
-              Explore the world of Pokémon with our interactive Pokédex. Search and filter to find your favorites!
+              Explore the world of Pokémon with our interactive Dexplorer. Search and filter to find your favorites!
             </p>
           </motion.div>
           
