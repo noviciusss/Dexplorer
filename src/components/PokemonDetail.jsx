@@ -57,7 +57,7 @@ const PokemonDetail = ({ pokemon, onClose }) => {
           {/* Close button */}
           <div className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm flex justify-between p-2 border-b">
             <h2 className="text-lg font-bold capitalize pl-2">
-              {pokemon.name} #{pokemon.id}
+              Pokemon Details
             </h2>
             <button 
               onClick={onClose}
